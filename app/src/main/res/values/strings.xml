@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CSW手机安全卫生</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_home">HomeActivity</string>
+</resources>
