@@ -8,6 +8,11 @@ import android.view.View;
 
 import com.csw.ms.mobilesafe.ui.SettingItemView;
 
+/**
+ * 设置中心
+ * @author chensiwen
+ * @date 2015/08/15
+ */
 public class SettingActivity extends Activity {
 
     private static final String TAG = "SettingActivity";

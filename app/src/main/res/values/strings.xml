@@ -1,7 +1,16 @@
 <resources>
-    <string name="app_name">CSW手机安全卫生</string>
+    <string name="app_name">360手机安全卫生</string>
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="title_splash_udpateinfo">升级进度为：0%</string>
+    <string name="title_activity_setting">SettingActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_lost_find">LostFindActivity</string>
+    <string name="title_activity_setup1">Setup1Activity</string>
+    <string name="title_activity_setup2">Setup2Activity</string>
+    <string name="title_activity_setup3">Setup3Activity</string>
+    <string name="title_activity_setup4">Setup4Activity</string>
 </resources>

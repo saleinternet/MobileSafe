@@ -2,15 +2,21 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.csw.ms.mobilesafe" >
 
+    <!-- 联网权限 -->
+    <uses-permission android:name="android.permission.internet" />
+    <!-- sdcard读写权限 -->
+    <uses-permission android:name="android.permission.read_external_storage" />
+    <uses-permission android:name="android.permission.write_external_storage" />
+
+    <!--表示被测试的目标包与instrumentation的名称。-->
+    <instrumentation android:targetPackage="com.csw.ms.mobilesafe"
+        android:name="android.test.InstrumentationTestRunner" />
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/app_icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity
-            android:name=".HomeActivity"
-            android:label="@string/title_activity_home" >
-        </activity>
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name" >
@@ -19,6 +25,34 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".HomeActivity"
+            android:label="@string/title_activity_home" >
+        </activity>
+        <activity
+            android:name=".SettingActivity"
+            android:label="@string/title_activity_setting" >
+        </activity>
+        <activity
+            android:name=".LostFindActivity"
+            android:label="@string/title_activity_lost_find" >
+        </activity>
+        <activity
+            android:name=".Setup1Activity"
+            android:label="@string/title_activity_setup1" >
+        </activity>
+        <activity
+            android:name=".Setup2Activity"
+            android:label="@string/title_activity_setup2" >
+        </activity>
+        <activity
+            android:name=".Setup3Activity"
+            android:label="@string/title_activity_setup3" >
+        </activity>
+        <activity
+            android:name=".Setup4Activity"
+            android:label="@string/title_activity_setup4" >
         </activity>
     </application>
 

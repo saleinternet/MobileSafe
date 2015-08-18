@@ -52,8 +52,8 @@ public class SettingItemView extends RelativeLayout {
         desc_off =
                 attrs.getAttributeValue("http://schemas.android.com/apk/res-auto", "desc_off");
 
-        System.out.println("desc : "+desc_on+ "#" + desc_off);
         setTitle(title);
+        setDesc(desc_off);
     }
 
     public SettingItemView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -69,9 +69,9 @@ public class SettingItemView extends RelativeLayout {
         //把一个布局文件-->View 并且加载在SettingItemView中
         View.inflate(context, R.layout.setting_item_view, this);
 
-        tv_title = (TextView) findViewById(R.id.tv_title);
-        tv_desc = (TextView) findViewById(R.id.tv_desc);
-        cb_status = (CheckBox) findViewById(R.id.cb_status);
+        tv_title = (TextView) this.findViewById(R.id.tv_title);
+        tv_desc = (TextView) this.findViewById(R.id.tv_desc);
+        cb_status = (CheckBox) this.findViewById(R.id.cb_status);
     }
 
     /**
