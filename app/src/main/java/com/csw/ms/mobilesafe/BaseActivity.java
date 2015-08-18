@@ -1,6 +1,7 @@
 package com.csw.ms.mobilesafe;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -15,9 +16,13 @@ public abstract class BaseActivity extends Activity {
     //1.定义手势识别器
     private GestureDetector gestureDetector;
 
+    public SharedPreferences sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        sp = getSharedPreferences("config", MODE_PRIVATE);
 
         //2.实例化手势识别器
         gestureDetector = new GestureDetector(this, new GestureDetector.SimpleOnGestureListener() {

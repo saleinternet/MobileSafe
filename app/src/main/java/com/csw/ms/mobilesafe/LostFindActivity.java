@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * 手机防盗
@@ -15,6 +16,11 @@ public class LostFindActivity extends Activity {
 
     private SharedPreferences sp;
 
+    /**
+     * 安全号码
+     */
+    private TextView tv_lost_find_phone;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +30,11 @@ public class LostFindActivity extends Activity {
         if (configed) {
             //做过设置 向导，留在当前页面
             setContentView(R.layout.activity_lost_find);
+
+            //设置安全号码
+            tv_lost_find_phone = (TextView) findViewById(R.id.tv_lost_find_phone);
+            String safenumber = sp.getString("safenumber", "");
+            tv_lost_find_phone.setText(safenumber);
         } else {
             //没有做过设置向导，跳转到设置向导
             Intent intent = new Intent(this, Setup1Activity.class);
