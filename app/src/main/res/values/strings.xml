@@ -14,4 +14,6 @@
     <string name="title_activity_setup3">Setup3Activity</string>
     <string name="title_activity_setup4">Setup4Activity</string>
     <string name="SelectContactActivity">SelectContactActivity</string>
+    <string name="title_activity_atools">AtoolsActivity</string>
+    <string name="title_activity_number_address">NumberAddressActivity</string>
 </resources>

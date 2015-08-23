@@ -74,14 +74,20 @@ public class HomeActivity extends Activity {
         list_home.setAdapter(adapter);
 
         list_home.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            Intent intent = null;
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0: //进入手机防盗页面
                         showLostFindDialog();
                         break;
+                    case 7: //进入高级工具
+                        intent = new Intent(HomeActivity.this, AtoolsActivity.class);
+                        startActivity(intent);
+                        break;
                     case 8: //进入设置中心
-                        Intent intent = new Intent(HomeActivity.this, SettingActivity.class);
+                        intent = new Intent(HomeActivity.this, SettingActivity.class);
                         startActivity(intent);
                         break;
                     default:

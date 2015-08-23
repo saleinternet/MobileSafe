@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
-            android:id="@+id/tv_lost_find_phone"
+            android:id="@+id/tv_safenumber"
             android:text="xxxx"
             android:textSize="20sp"
             android:layout_marginRight="5dp"
@@ -54,6 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ImageView
+            android:id="@+id/iv_protecting"
             android:src="@drawable/lock"
             android:layout_marginRight="5dp"
             android:layout_marginTop="8dp"
