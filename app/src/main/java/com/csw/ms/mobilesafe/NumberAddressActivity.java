@@ -46,7 +46,7 @@ public class NumberAddressActivity extends Activity {
                     tv_query_result.setText(MobileInfoService.getMobileAddress(inStream, number));
                 } catch (Exception e) {
                     Log.e(TAG, e.toString());
-                    Toast.makeText(NumberAddressActivity.this, "查询失败", 1).show();
+                    Toast.makeText(NumberAddressActivity.this, "查询失败", Toast.LENGTH_LONG).show();
                 }
 
             }
