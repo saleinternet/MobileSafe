@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -39,6 +41,11 @@ public class NumberAddressActivity extends Activity {
                 String number = et_query_number.getText().toString().trim();
                 if (TextUtils.isEmpty(number)) {
                     Toast.makeText(NumberAddressActivity.this, "请输入要查询的手机号码", Toast.LENGTH_SHORT).show();
+
+                    //抖动动画
+                    Animation shake = AnimationUtils.loadAnimation(NumberAddressActivity.this, R.anim.shake);
+                    et_query_number.startAnimation(shake);
+
                     return;
                 }
                 ConnectionDetector cd = new ConnectionDetector(getApplicationContext());
