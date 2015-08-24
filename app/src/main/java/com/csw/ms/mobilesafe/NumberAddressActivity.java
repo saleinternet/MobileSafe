@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.csw.ms.mobilesafe.numberaddress.MobileInfoService;
+import com.csw.ms.mobilesafe.utils.ConnectionDetector;
 
 import java.io.InputStream;
 
@@ -40,14 +41,21 @@ public class NumberAddressActivity extends Activity {
                     Toast.makeText(NumberAddressActivity.this, "请输入要查询的手机号码", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                InputStream inStream =
-                        this.getClass().getClassLoader().getResourceAsStream("mobilesoap.xml");
-                try {
-                    tv_query_result.setText(MobileInfoService.getMobileAddress(inStream, number));
-                } catch (Exception e) {
-                    Log.e(TAG, e.toString());
-                    Toast.makeText(NumberAddressActivity.this, "查询失败", Toast.LENGTH_LONG).show();
+                ConnectionDetector cd = new ConnectionDetector(getApplicationContext());
+                Boolean isInternetPresent = cd.isConnectingToInternet(); // true or false
+                if (isInternetPresent) {
+                    InputStream inStream =
+                            this.getClass().getClassLoader().getResourceAsStream("mobilesoap.xml");
+                    try {
+                        tv_query_result.setText(MobileInfoService.getMobileAddress(inStream, number));
+                    } catch (Exception e) {
+                        Log.e(TAG, e.toString());
+                        Toast.makeText(NumberAddressActivity.this, "查询失败", Toast.LENGTH_LONG).show();
+                    }
+                } else {
+                    Toast.makeText(NumberAddressActivity.this, "网络未连接,请打开网络连接", Toast.LENGTH_SHORT).show();
                 }
+
 
             }
         });
