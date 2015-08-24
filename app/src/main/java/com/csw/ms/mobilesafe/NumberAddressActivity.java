@@ -2,6 +2,7 @@ package com.csw.ms.mobilesafe;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,11 @@ public class NumberAddressActivity extends Activity {
 
     private static final String TAG = "NumberAddressActivity";
 
+    /**
+     * 系统提供的振动服务
+     */
+    private Vibrator vibrator;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +41,8 @@ public class NumberAddressActivity extends Activity {
         //查询结果
         final TextView tv_query_result = (TextView) findViewById(R.id.tv_query_result);
 
+        vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
         bt_query.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +53,13 @@ public class NumberAddressActivity extends Activity {
                     //抖动动画
                     Animation shake = AnimationUtils.loadAnimation(NumberAddressActivity.this, R.anim.shake);
                     et_query_number.startAnimation(shake);
+                    //当电话号码为空的时候,就振动手机提醒用户
+//                    vibrator.vibrate(2000); //振动2s
+                    //振动有规律
+                    long[] pattern = {200, 200, 300, 300, 1000, 2000};
+                    //-1:不重复 0:循环振动
+                    vibrator.vibrate(pattern, -1);
+
 
                     return;
                 }
